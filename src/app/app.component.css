@@ -1,0 +1,115 @@
+/* Estilo rústico para la calculadora */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto Slab', serif; /* Fuente con toque rústico */
+  background-color: #f4f1e1; /* Color suave que evoca madera y naturaleza */
+  color: #3c3c3c; /* Texto oscuro para contraste */
+}
+
+.calc-container {
+  width: 420px;
+  margin: 60px auto;
+  padding: 30px;
+  border-radius: 15px;
+  background: #f7f3e1; /* Fondo color claro cálido */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border: 3px solid #a57c53; /* Borde que simula madera o tono cálido */
+  background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png'); /* Textura de madera */
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.calc-display {
+  height: 60px;
+  background-color: #d2b59f; /* Color marrón claro */
+  color: #2e2e2e;
+  font-size: 2.2em;
+  text-align: right;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 2px solid #a57c53; /* Borde cálido */
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.2); /* Sombra interna suave */
+}
+
+.calc-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.calc-buttons button {
+  font-size: 1.6em;
+  padding: 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: #d9c29d; /* Color beige cálido */
+  color: #3c3c3c;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  border: 2px solid #a57c53; /* Borde cálido */
+}
+
+.calc-buttons button:hover {
+  background-color: #c1a380; /* Color marrón más oscuro en hover */
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
+}
+
+.calc-buttons button:active {
+  transform: scale(0.98); /* Leve ligera reducción cuando se presiona */
+  background-color: #b48e5e;
+}
+
+.calc-buttons button:focus {
+  outline: none;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+.zero {
+  grid-column: span 2; /* El cero ocupa dos columnas */
+}
+
+button:disabled {
+  background-color: #c2b2a1;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+button:disabled:hover {
+  background-color: #c2b2a1;
+}
+
+/* Efecto de resplandor suave para los botones */
+@keyframes rusticGlow {
+  0% {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1), 0 0 12px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1), 0 0 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+button:hover {
+  animation: rusticGlow 1s infinite; /* Efecto de resplandor rústico */
+}
